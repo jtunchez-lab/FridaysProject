@@ -2,18 +2,30 @@ const SecretNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0
 let Guess = 0
 
-do {
-    
-    
+const submitButton = document.getElementById("submitBtn");
+const userInput = document.getElementById("userGuess");
+const messageParagraph = document.getElementById("message");
+
+
+submitButton.addEventListener("click", function() {
+   
+    const guess = parseInt(userInput.value);
     attempts++;
 
     
-    if (guess < secretNumber) {
-        alert("Too low Try again.");
+    if (isNaN(guess)) {
+        messageParagraph.textContent = "Please enter a valid number!";
+    } else if (guess < secretNumber) {
+        messageParagraph.textContent = "Too low Try again.";
     } else if (guess > secretNumber) {
-        alert("Too high Try again.");
+        messageParagraph.textContent = "Too high Try again.";
     } else {
-        alert(` Correct! You got it in ${attempts} attempts.`);
+        messageParagraph.textContent = `Correct! You found the number in ${attempts} attempts.`;
+       
+        submitButton.disabled = true;
+        userInput.disabled = true;
     }
 
-} while (guess !== secretNumber);
+    
+    userInput.value = "";
+});
