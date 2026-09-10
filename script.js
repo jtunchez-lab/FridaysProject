@@ -4,7 +4,7 @@ let Guess = 0
 
 do {
     
-    guess = parseInt(prompt("Enter your guess:"));
+    
     attempts++;
 
     
