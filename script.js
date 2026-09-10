@@ -16,9 +16,9 @@ submitButton.addEventListener("click", function() {
     if (isNaN(guess)) {
         messageParagraph.textContent = "Please enter a valid number!";
     } else if (guess < SecretNumber) {
-        messageParagraph.textContent = "Too low Try again.";
+        messageParagraph.textContent = guess + " is too low Try again.";
     } else if (guess > SecretNumber) {
-        messageParagraph.textContent = "Too high Try again.";
+        messageParagraph.textContent = guess + " is too high Try again.";
     } else {
         messageParagraph.textContent = `Correct! You found the number in ${attempts} attempts.`;
        
