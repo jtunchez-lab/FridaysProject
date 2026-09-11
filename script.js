@@ -1,4 +1,4 @@
-const SecretNumber = Math.floor(Math.random() * 100) + 1;
+const SecretNumber = Math.floor(Math.random() * 10) + 1;
 let attempts = 0
 let Guess = 0
 
